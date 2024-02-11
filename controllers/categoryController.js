@@ -1,9 +1,21 @@
 const Category = require('../models/category');
+const Item = require('../models/item');
+
 const asyncHandler = require('express-async-handler');
 
 // Display home page.
 exports.index = asyncHandler(async (req, res, next) => {
-  res.send('NOT IMPLEMENTED: Site Home Page');
+  // Get details of books, book instances, authors and genre counts (in parallel)
+  const [numItems, numCategories] = await Promise.all([
+    Item.countDocuments({}).exec(),
+    Category.countDocuments({}).exec(),
+  ]);
+
+  res.render('index', {
+    title: 'Inventory App - Home',
+    item_count: numItems,
+    category_count: numCategories,
+  });
 });
 
 // Display list of all Categories.
