@@ -1,8 +1,8 @@
 {
   "name": "inventory-application",
   "version": "0.0.0",
-  "engine": {
-    "node": ">=21.6.0"
+  "engines": {
+    "node": "16.x"
   },
   "private": true,
   "scripts": {
