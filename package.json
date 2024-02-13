@@ -2,7 +2,7 @@
   "name": "inventory-application",
   "version": "0.0.0",
   "engines": {
-    "node": ">=21.6.0"
+    "node": "20.11.0"
   },
   "private": true,
   "scripts": {
