@@ -80,6 +80,11 @@ exports.item_delete_get = asyncHandler(async (req, res, next) => {
 
 // Handle Item delete on POST.
 exports.item_delete_post = asyncHandler(async (req, res, next) => {
+  if (req.body.password !== process.env.ADMIN_PASSWORD) {
+    res.redirect('/items');
+    return;
+  }
+
   const item = await Item.findById(req.body.itemid).exec();
   // If the item is not found, redirect to the items list
   if (item === null) {

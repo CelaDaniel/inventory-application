@@ -6,9 +6,13 @@ block content
     if item.filename
         img(src='/images/'+item.filename, alt=item.name, style='max-width: 15rem; max-height: 15rem;')
 
-    p Do you really want to delete this Item?
-
+    hr
     form(method='POST')
+        div.form-group
+            label(for='password') Super Secret Password
+            input#password.form-control(type='password', name='password', required, style='width: 20rem;')
+    
+        p Do you really want to delete this Item?
         div.form-group
             input#itemid.form-control(type='hidden', name='itemid', value=item._id )
 
