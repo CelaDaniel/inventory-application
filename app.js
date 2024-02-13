@@ -4,12 +4,22 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const compression = require('compression');
+const helmet = require('helmet');
 const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const app = express();
+
+const RateLimit = require('express-rate-limit');
+const limiter = RateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 60,
+});
+// Apply rate limiter to all requests
+app.use(limiter);
 
 // Set up mongoose connection
 mongoose.set('strictQuery', false);
@@ -27,6 +37,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression());
+// Set CSP headers to allow our Bootstrap and Jquery to be served
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      'script-src': ["'self'", 'code.jquery.com', 'cdn.jsdelivr.net'],
+    },
+  })
+);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
