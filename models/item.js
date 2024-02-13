@@ -6,6 +6,7 @@ const ItemSchema = new mongoose.Schema({
   category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
   price: { type: Number, required: true },
   stock: { type: Number, required: true },
+  filename: { type: String, required: true },
 });
 
 ItemSchema.virtual('url').get(function () {

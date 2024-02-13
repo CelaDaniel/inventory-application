@@ -3,7 +3,8 @@ extends layout
 block content
 
     h1 #{title}: #{item.name}
-    p= item.description
+    if item.filename
+        img(src='/images/'+item.filename, alt=item.name, style='max-width: 15rem; max-height: 15rem;')
 
     p Do you really want to delete this Item?
 

@@ -1,3 +1,6 @@
+const fs = require('fs').promises;
+const path = require('path');
+
 const Item = require('../models/item');
 const Category = require('../models/category');
 
@@ -46,6 +49,7 @@ exports.item_create_post = [
       price: req.body.price,
       stock: req.body.stock,
       category: req.body.category,
+      filename: req.file.filename,
     });
     if (!errors.isEmpty()) {
       const categories = await Category.find({}).exec();
@@ -77,9 +81,17 @@ exports.item_delete_get = asyncHandler(async (req, res, next) => {
 // Handle Item delete on POST.
 exports.item_delete_post = asyncHandler(async (req, res, next) => {
   const item = await Item.findById(req.body.itemid).exec();
+  // If the item is not found, redirect to the items list
   if (item === null) {
     res.redirect('/items');
   }
+  // Delete the file image
+  try {
+    await fs.unlink(path.resolve(__dirname, '../public/images/', item.filename));
+  } catch (err) {
+    console.error(err);
+  }
+  // Delete the item from the database
   await Item.findByIdAndDelete(req.body.itemid).exec();
   res.redirect('/items');
 });
@@ -108,6 +120,19 @@ exports.item_update_post = [
   asyncHandler(async (req, res, next) => {
     // Extract the validation errors from a request.
     const errors = validationResult(req);
+    // If this is an update operation and a new file has been uploaded
+    if (req.params.id && req.file) {
+      // Get the old item from the database
+      const oldItem = await Item.findById(req.params.id);
+      // Delete the old file
+      if (oldItem.filename) {
+        try {
+          await fs.unlink(path.resolve(__dirname, '../public/images/', oldItem.filename));
+        } catch (err) {
+          console.error(err);
+        }
+      }
+    }
     // Create an item object with escaped and trimmed data.
     const item = new Item({
       name: req.body.name,
@@ -115,6 +140,7 @@ exports.item_update_post = [
       price: req.body.price,
       stock: req.body.stock,
       category: req.body.category,
+      filename: req.file ? req.file.filename : undefined,
       _id: req.params.id,
     });
     if (!errors.isEmpty()) {

@@ -3,7 +3,10 @@ extends layout
 block content
     h1= title
 
-    form(method='POST')
+    if item && item.filename
+        img(src='/images/'+item.filename, alt=item.name, style='max-width: 15rem; max-height: 15rem;')
+
+    form(method='POST', enctype='multipart/form-data')
         div.form-group
             label(for='name') Name:
             input#name.form-control(type='text', placeholder='Name of item', name='name', required, value=(undefined === item ? '' : item.name))
@@ -28,6 +31,9 @@ block content
         div.form-group
             label(for='stock') Stock:
             input#stock.form-control(type='number', placeholder='Stock', name='stock', value=(undefined === item ? '' : item.stock), required)
+        div.form-group
+            label(for='image') Image:
+            input#image.form-control(type='file', placeholder='Image', name='image', value=(undefined === item ? '' : item.image), required)
         button.btn.btn-primary(type='submit') Submit
 
     if errors

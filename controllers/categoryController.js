@@ -146,7 +146,6 @@ exports.category_update_post = [
     // Extract the validation errors from a request.
     const errors = validationResult(req);
     // Create a category object with escaped and trimmed data.
-    console.log(req.body);
     const category = new Category({
       name: req.body.name,
       description: req.body.description,

@@ -3,6 +3,9 @@ extends layout
 block content
     h1 #{item.name}
 
+    if item.filename
+        img(src='/images/'+item.filename, alt=item.name, style='max-width: 15rem; max-height: 15rem;')
+
     p #[strong Description:] #{item.description}
     p #[strong Price:] #{item.price.toFixed(2)}€
     p #[strong Stock:] #{item.stock}
