@@ -1,6 +1,7 @@
 # Inventory Application
 
 This project is a Node.js-based Inventory Management Application. I created this to further learn Express. 
+Live Website: https://inventory-application.up.railway.app/
 
 ## Technical Aspects
 - Node.js and Express.js: Used for building the server-side logic, handling routes, and HTTP requests.
@@ -11,9 +12,7 @@ This project is a Node.js-based Inventory Management Application. I created this
 - Security and Performance: Implementing web security and performance optimization best practices.
 - Rate Limiting: Protecting the application from being overwhelmed by too many requests.
 
-## Deployed on Railway
 ![image](https://github.com/Dallair220/inventory-application/assets/93786532/d277fdb9-ea38-40e7-b75b-fb17d41f55df)
 
-Live Website: https://inventory-application.up.railway.app/
-
 ## Run Locally:
+xyz
