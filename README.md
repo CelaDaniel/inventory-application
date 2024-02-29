@@ -18,3 +18,6 @@ Screenshot:
 
 ## Run Locally:
 xyz
+
+## Live Website: 
+https://inventory-application.up.railway.app/
