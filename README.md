@@ -13,6 +13,7 @@ This project is a Node.js-based Inventory Management Application. I created this
 
 ## Deployed on Railway
 ![image](https://github.com/Dallair220/inventory-application/assets/93786532/d277fdb9-ea38-40e7-b75b-fb17d41f55df)
+
 Live Website: https://inventory-application.up.railway.app/
 
 ## Run Locally:
