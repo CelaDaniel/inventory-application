@@ -20,6 +20,7 @@ const limiter = RateLimit({
 });
 // Apply rate limiter to all requests
 app.use(limiter);
+app.set('trust proxy', 1);
 
 // Set up mongoose connection
 mongoose.set('strictQuery', false);
