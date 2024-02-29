@@ -18,7 +18,7 @@ Live Website: https://inventory-application.up.railway.app/
 - run `npm install` inside /inventory-application
 - create a .env file and set the `MONGODB_URI` of your MongoDB Cluster.
 - you can then start the server with `npm run serverstart`
-- and visit the website in your browser at http://localhost:3000/
+- visit the website in your browser at http://localhost:3000/
 
 ## Screenshots: 
 ![image](https://github.com/Dallair220/inventory-application/assets/93786532/d277fdb9-ea38-40e7-b75b-fb17d41f55df)
