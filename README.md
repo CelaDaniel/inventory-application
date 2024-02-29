@@ -13,6 +13,7 @@ Live Website: https://inventory-application.up.railway.app/
 - Security and Performance: Implementing web security and performance optimization best practices.
 - Rate Limiting: Protecting the application from being overwhelmed by too many requests.
 
+Screenshot: 
 ![image](https://github.com/Dallair220/inventory-application/assets/93786532/d277fdb9-ea38-40e7-b75b-fb17d41f55df)
 
 ## Run Locally:
