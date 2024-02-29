@@ -15,9 +15,7 @@ Live Website: https://inventory-application.up.railway.app/
 
 ## Screenshots: 
 ![image](https://github.com/Dallair220/inventory-application/assets/93786532/d277fdb9-ea38-40e7-b75b-fb17d41f55df)
-![image](https://github.com/Dallair220/inventory-application/assets/93786532/dcd4f51e-dea9-4662-b6a7-24750b3f6b39)
 ![image](https://github.com/Dallair220/inventory-application/assets/93786532/c6cc73c7-c403-4fe2-8884-ed7e00cd8257)
-![image](https://github.com/Dallair220/inventory-application/assets/93786532/b7276e8a-eaa9-4c57-bdc2-c88217595488)
 
 ## Run Locally:
 xyz
