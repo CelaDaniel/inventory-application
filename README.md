@@ -5,13 +5,13 @@ This project is a Node.js-based Inventory Management Application. I created this
 Live Website: https://inventory-application.up.railway.app/
 
 ## Technical Aspects
-- Node.js and Express.js: Used for building the server-side logic, handling routes, and HTTP requests.
-- MongoDB and Mongoose: NoSQL database, used for data storage and schema validation.
-- Models: Two main models - Items and Categories, supporting all CRUD operations.
-- Pug Templating Engine: Used for designing views and generating HTML.
-- Image Uploads: Enabled using Multer, allowing users to upload images for each inventory item.
-- Security and Performance: Implementing web security and performance optimization best practices.
-- Rate Limiting: Protecting the application from being overwhelmed by too many requests.
+- **Node.js and Express.js**: Used for building the server-side logic, handling routes, and HTTP requests.
+- **MongoDB and Mongoose**: NoSQL database, used for data storage and schema validation.
+- **Models**: Two main models - Items and Categories, supporting all CRUD operations.
+- **Pug Templating Engine**: Used for designing views and generating HTML.
+- **Image Uploads**: Enabled using Multer, allowing users to upload images for each inventory item.
+- **Security and Performance**: Implementing web security and performance optimization best practices.
+- **Rate Limiting**: Protecting the application from being overwhelmed by too many requests.
 
 ## Run Locally:
 - clone this repository to your local machine
