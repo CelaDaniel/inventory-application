@@ -1,6 +1,7 @@
 # Inventory Application
 
 This project is a Node.js-based Inventory Management Application. I created this to further learn Express. 
+
 Live Website: https://inventory-application.up.railway.app/
 
 ## Technical Aspects
